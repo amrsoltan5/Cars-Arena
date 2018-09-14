@@ -1,0 +1,418 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <title>@Fabrika_Cars.Languages.Language.carsarena</title>
+    <link rel="stylesheet" href="~/css/main.css" type="text/css" />
+
+    <script type="text/javascript" src="~/js/main1.js"></script>
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap-select.css">
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+     Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <!-- js -->
+    <script type="text/javascript" src="~/js/jquery.min.js"></script>
+    <!-- js -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap-select.js"></script>
+    <script>
+  $(document).ready(function () {
+      'use strict';
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+      $('.bxslider').bxslider({
+          auto:true,
+          pager:false
+      });
+  });
+
+  $(function(){
+
+
+      $(" box_skitter_large").skitter({
+          auto_play:false,
+          Control:True,
+          Control_position:"rightBottom",
+          dots:True,
+          focus:True,
+          interrval:3000,
+          perview:true
+      }
+      );
+  }
+    </script>
+    <script type="text/javascript" src="~/js/jquery.leanModal.min.js"></script>
+    <link href="~/css/jquery.uls.css" rel="stylesheet" />
+    <link href="~/css/jquery.uls.grid.css" rel="stylesheet" />
+    <link href="~/css/jquery.uls.lcd.css" rel="stylesheet" />
+    <link href="~/css/jquery.bxslider.min.css" rel="stylesheet" />
+    <!-- Source -->
+    <script src="~/js/jquery.uls.data.js"></script>
+    <script src="~/js/jquery.uls.data.utils.js"></script>
+    <script src="~/js/jquery.uls.lcd.js"></script>
+    <script src="~/js/jquery.uls.languagefilter.js"></script>
+    <script src="~/js/jquery.uls.regionfilter.js"></script>
+    <script src="~/js/jquery.uls.core.js"></script>
+    <script src="~/js/jquery-2.1.1.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js.js"></script>
+    <script>
+			$( document ).ready( function() {
+				$( '.uls-trigger' ).uls( {
+					onSelect : function( language ) {
+						var languageName = $.uls.data.getAutonym( language );
+						$( '.uls-trigger' ).text( languageName );
+					},
+					quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+				} );
+			} );
+    </script>
+    <script src="~/js/jquery-1.10.2.js"></script>
+
+    <script>
+
+        $(function () {
+    
+            $("#logout").on("click",function () {
+    
+                
+
+                $.ajax({
+                    url:"/Home/Logout",
+                    
+                    success:function (result) {
+                        
+                        location.reload();
+
+                    }
+                
+                });
+
+
+            });
+
+
+
+            $("#select").select2();
+
+
+        });
+
+
+
+
+    </script>
+
+    <link href="~/css/fileinput.css" rel="stylesheet" />
+
+    <script src="~/js/fileinput.js"></script>
+
+    <link href="~/css/select2.css" rel="stylesheet" />
+    <script src="~/js/select2.js"></script>
+
+
+    <style>
+
+        .AD{
+            margin-left:6px;
+            background-color:green;
+            text-decoration:none;
+        }
+
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+    <style>
+
+
+        .lang-switcher {
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.lang-switcher li {
+  display: inline-block;
+  border-right: 1px solid #529427;
+  float: left;
+}
+.lang-switcher li:last-child {
+  border-right: none;
+}
+.lang-switcher li a {
+  padding: 3px 5px;
+  color: #529427;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  display: inline-block;
+  height: 100%;
+  min-width: 40px;
+  text-align: center;
+}
+.lang-switcher li a:hover {
+  text-decoration: none;
+}
+.lang-switcher li a.is-active {
+  color: #000000;
+  cursor: default;
+}
+
+/* modifiers */
+.lang-switcher.lang-switcher--pill, .lang-switcher.lang-switcher--rounded-pill {
+  border: 1px solid #529427;
+}
+.lang-switcher.lang-switcher--pill a:hover, .lang-switcher.lang-switcher--rounded-pill a:hover {
+  background: #529427;
+  color: #ffffff;
+}
+.lang-switcher.lang-switcher--pill a.is-active, .lang-switcher.lang-switcher--rounded-pill a.is-active {
+  background-color: #529427;
+  color: #ffffff;
+}
+
+.lang-switcher.lang-switcher--rounded-pill {
+  border-radius: 15px;
+}
+.lang-switcher.lang-switcher--rounded-pill li:first-child a {
+  padding-left: 10px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.lang-switcher.lang-switcher--rounded-pill li:last-child a {
+  padding-right: 10px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+    </style>
+
+    <style>
+
+       .languages{
+           padding-left:12px;
+           margin-top:15px;
+       }
+      
+
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/home"><span>@Fabrika_Cars.Languages.Language.cars</span> @Fabrika_Cars.Languages.Language.Arena</a>
+            </div>
+          
+            <div class="header-right">
+
+                @*<a class=""  href="/Languages/English">English</a> <span> </span> <a class="" href="/Languages/Arabic">العربية</a>*@
+
+                
+
+                @if (Session["user_id"] != null)
+                {
+                <a href="/home/messages" style="margin-right:20px;" class="account btn btn-default"><i class="fa fa-spinner fa-spin" style="font-weight:bold"></i>@Fabrika_Cars.Languages.Language.messages</a>
+                }
+
+                <div class="dictionary">
+                    
+
+                </div>
+
+                @using (Html.BeginForm("search","Home",FormMethod.Get))
+                {
+                    <div class="search">
+                        @Fabrika_Cars.Languages.Language.Filters <select id="select" name="filter">
+                            
+                            <option value="1" >@Fabrika_Cars.Languages.Language.category</option>
+                            <option value="2">@Fabrika_Cars.Languages.Language.title</option>
+                            <option value="3">@Fabrika_Cars.Languages.Language.description</option>
+                        </select>
+                        <input type="text" name="text" placeholder="@Fabrika_Cars.Languages.Language.search" style="font-weight:bold">
+
+                        
+
+                    </div>
+
+                }
+           
+
+                @if (Session["user_id"] != null)
+                {
+                    <a class="account" href="/Home/profile">@Fabrika_Cars.Languages.Language.myaccount </a>
+
+                }
+                else
+                {
+                    <a class="account" href="/Home/register">@Fabrika_Cars.Languages.Language.myaccount</a>
+                }
+
+                <span style="margin-left3px;"> </span>
+
+                @if (Session["user_id"] != null)
+                {
+                    <div style="margin:5px"></div>
+                  
+
+                    <a  id="logout" class="account"> @Fabrika_Cars.Languages.Language.logout </a>
+                }
+                else
+                {
+                    <div style="margin:5px"></div>
+                    <a href="/Home/Login" id="Login" class="account"> @Fabrika_Cars.Languages.Language.login  </a>
+                }
+                <a class="AD" href="/Home/freeAD">@Fabrika_Cars.Languages.Language.createfreeadd</a>
+
+                <div class="languages">
+                    <ul class="lang-switcher lang-switcher--rounded-pill">
+
+                        <li><a href="/Languages/English" class="is-active">En</a></li>
+                        <li><a href="/Languages/Arabic">Ar</a></li>
+
+                    </ul>
+                </div>
+                <!--<span class="active uls-trigger">Select language</span>-->
+                <!-- Large modal -->
+              
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="main-banner banner text-center">
+        <div class="container">
+            <h1 style="background-color:brown;">@Fabrika_Cars.Languages.Language.SellorAdvertise <span class="segment-heading"> @Fabrika_Cars.Languages.Language.anythingonlinewithCarsArena</span> </h1>
+           
+
+        </div>
+    </div> <br>
+
+    <br>
+
+    <!-- content-starts-here -->
+    <!-- content-starts-here -->
+   
+
+            @RenderBody()
+
+
+
+                <!--footer section start-->
+                <footer>
+                    <div class="footer-top">
+                        <div class="container">
+                            <div class="foo-grids">
+                                <div class="col-md-3 footer-grid">
+                                    <h4 class="footer-head">@Fabrika_Cars.Languages.Language.AboutUS</h4>
+                                    <font color=red><p> @Fabrika_Cars.Languages.Language.aboutusTitle </p> </font>
+                                   
+                                </div>
+                                <div class="col-md-3 footer-grid">
+                                    <h4 class="footer-head">@Fabrika_Cars.Languages.Language.Help</h4>
+                                    <ul>
+                                        <li><a href="#">@Fabrika_Cars.Languages.Language.HowitWorks</a></li>
+                                        <li><a href="#">@Fabrika_Cars.Languages.Language.Sitemap</a></li>
+                                        <li><a href="#">@Fabrika_Cars.Languages.Language.Feedback</a></li>
+                                        <li><a href="#">@Fabrika_Cars.Languages.Language.Contact</a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-md-3 footer-grid">
+                                    <h4 class="footer-head">@Fabrika_Cars.Languages.Language.Information</h4>
+        
+
+                                </div>
+                                <div class="col-md-3 footer-grid">
+                                    <h4 class="footer-head">@Fabrika_Cars.Languages.Language.ContactUs</h4>
+                                    <span class="hq">@Fabrika_Cars.Languages.Language.Ourheadquarters</span>
+                                    <address>
+                                        <ul class="location">
+                                            <li><span class="glyphicon glyphicon-map-marker"></span></li>
+                                            <li>@Fabrika_Cars.Languages.Language.ElshoroukAcademy</li>
+                                            <div class="clearfix"></div>
+                                        </ul>
+                                        <ul class="location">
+                                            <li><span class="glyphicon glyphicon-earphone"></span></li>
+                                            <li>+2 01001215424</li>
+                                            <div class="clearfix"></div>
+                                        </ul>
+                                        <ul class="location">
+                                            <li><span class="glyphicon glyphicon-envelope"></span></li>
+                                            <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=carsarena3323179@gmail.com&su=SUBJECT&body=BODY&bcc=someone.else@example.com">carsarena3323179@gmail.com</a></li>
+                                            <div class="clearfix"></div>
+                                        </ul>
+                                    </address>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="scroll-to-top" href="#">
+                        <i class="fa fa-chevron-up" aira-hidden="true"></i>
+                    </a>
+
+
+                    <div class="footer-bottom text-center">
+                        <div class="container">
+                            <div class="footer-logo">
+                                <a href="index.html"><span> @Fabrika_Cars.Languages.Language.carsarena </span> </a>
+                            </div>
+                            <div class="footer-social-icons">
+                                <ul>
+                                    <li><a class="facebook" href="#"><span>Facebook</span></a></li>
+                                    <li><a class="twitter" href="#"><span>Twitter</span></a></li>
+                                    <li><a class="flickr" href="#"><span>Insgram</span></a></li>
+                                    <li><a class="googleplus" href="#"><span>Google+</span></a></li>
+
+                                </ul>
+                            </div>
+                            <div class="copyrights">
+                                <p> © sha  2017-2018  Fabrika Cars. All Rights Reserved | Design by  Seham Goda & Hager Ali</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </footer>
+                <!--footer section end-->
+
+</body>
+</html>

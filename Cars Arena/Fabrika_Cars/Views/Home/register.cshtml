@@ -1,0 +1,128 @@
+﻿@model Fabrika_Cars.Models.users
+
+
+@{
+    ViewBag.Title = "register";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+
+<head>
+    <link href="~/css/register.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <!------ Include the above in your HEAD tag ---------->
+
+</head>
+
+
+
+<div class="container">
+    <div class="row main">
+        <div class="panel-heading">
+            <div class="panel-title text-center">
+                <h1 class="title">@Fabrika_Cars.Languages.Language.registernowincarsarena</h1>
+                <hr />
+            </div>
+        </div>
+        <div class="main-login main-center">
+
+            <div>
+
+
+                @using (Html.BeginForm("register","Home",FormMethod.Post,new {@class="form-horizontal" , dir= @Fabrika_Cars.Languages.Language.dir }))
+                {
+
+
+
+                    <div class="form-group">
+                        <label for="name" class="cols-sm-2 control-label">@Fabrika_Cars.Languages.Language.YourName</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="@Fabrika_Cars.Languages.Language.EnteryourName" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="cols-sm-2 control-label">@Fabrika_Cars.Languages.Language.YourEmail</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="@Fabrika_Cars.Languages.Language.EnteryourEmail" required />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">@Fabrika_Cars.Languages.Language.address</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="address" id="username" placeholder="@Fabrika_Cars.Languages.Language.Enteryouraddress" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="cols-sm-2 control-label">@Fabrika_Cars.Languages.Language.Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="@Fabrika_Cars.Languages.Language.EnteryourPassword" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm" class="cols-sm-2 control-label">@Fabrika_Cars.Languages.Language.phonenumber</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="tel" class="form-control" name="phone" id="confirm" placeholder="@Fabrika_Cars.Languages.Language.Enteryourphone" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm" class="cols-sm-2 control-label">@Fabrika_Cars.Languages.Language.Gender</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    @Fabrika_Cars.Languages.Language.Male
+
+                                <input type="radio" name="gender" value="true" />
+                                    @Fabrika_Cars.Languages.Language.Female
+                                <input type="radio" name="gender" value="false" />
+
+                                
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="@Fabrika_Cars.Languages.Language.Register" />
+                    </div>
+                    <div class="login-register">
+                        <a href="index.php">@Fabrika_Cars.Languages.Language.login</a>
+                    </div>
+
+                }
+
+
+
+
+            </div>
+
+
+
+
+</div>
+</div>
+</div>
+
+<br /> <br />

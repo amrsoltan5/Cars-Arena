@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewBag.Title = "freeAD";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<head>
+
+
+
+
+
+    <style>
+        .centered-form{
+	        margin-top: 60px;
+        }
+
+        .centered-form .panel{
+	        background: rgba(255, 255, 255, 0.8);
+	        box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+        }
+
+        textarea {
+    resize: none;
+}
+
+    </style>
+
+
+    <script>
+
+        $(function () {
+
+            $("#select").select2({
+                width: 'resolve'
+
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<div class="container">
+<div class="row centered-form">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" dir="rtl">@Fabrika_Cars.Languages.Language.createyouraddwithcarsarena <small dir="rtl">@Fabrika_Cars.Languages.Language.ItisFree</small></h3>
+            </div>
+            <div class="panel-body">
+               
+              
+                    @using (Html.BeginForm("freeAD","Home",FormMethod.Post,new { role = "form", dir = "rtl", enctype = "multipart/form-data" }))
+                    {
+
+
+                        <div class="row" style="font-weight:bold; font-size:18px">
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b> <label class="control-label">@Fabrika_Cars.Languages.Language.addName </label> </b>
+                                <div class="form-group">
+
+                                    <input type="text" name="title" class="form-control input-sm" placeholder="@Fabrika_Cars.Languages.Language.addName" required>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b>  <label class="control-label">@Fabrika_Cars.Languages.Language.descriptionadd </label></b>
+                                <div class="form-group">
+
+                                    <textarea required cols="74" rows="4" name="description"></textarea>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b> <label class="control-label">@Fabrika_Cars.Languages.Language.requiredprice  </label> </b>
+                                <div class="form-group">
+
+                                    <input type="number" name="price" class="form-control input-sm" placeholder="@Fabrika_Cars.Languages.Language.requiredprice  " required>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b>    <label class="control-label">@Fabrika_Cars.Languages.Language.selectcategory </label> </b>
+                                <div class="form-group">
+
+                                    <select id="select" style="width: 50%" name="car_cat" required>
+                                        <option>@Fabrika_Cars.Languages.Language.selectcategory</option>
+                                        <option value="BMW">@Fabrika_Cars.Languages.Language.BMW</option>
+                                        <option value="Toyota">@Fabrika_Cars.Languages.Language.Toyota</option>
+                                        <option value="opel">@Fabrika_Cars.Languages.Language.opel</option>
+                                        <option value="Chevrolet">@Fabrika_Cars.Languages.Language.Chevrolet</option>
+                                        <option value="Nissan">@Fabrika_Cars.Languages.Language.Nissan</option>
+                                        <option value="Hyundai">@Fabrika_Cars.Languages.Language.Hyundai</option>
+                                        <option value="peugeut">@Fabrika_Cars.Languages.Language.peugeut</option>
+                                        <option value="Honda">@Fabrika_Cars.Languages.Language.Honda</option>
+                                        <option value="Volvo">@Fabrika_Cars.Languages.Language.Volvo</option>
+                                        <option value="Mazda">@Fabrika_Cars.Languages.Language.Mazda</option>
+                                        <option value="Kia">@Fabrika_Cars.Languages.Language.Kia</option>
+                                        <option value="Mercedes">@Fabrika_Cars.Languages.Language.Mercedes</option>
+                                        
+
+                                    </select>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b>  <label class="control-label">@Fabrika_Cars.Languages.Language.addphoto  </label></b>
+                                <div class="form-group">
+
+                                    <input id="input-b2" name="file" type="file" class="file" data-show-preview="True" required>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b>    <label class="control-label">@Fabrika_Cars.Languages.Language.City</label> </b>
+                                <div class="form-group">
+
+                                    <input type="text" name="city" id="city" class="form-control input-sm" placeholder="@Fabrika_Cars.Languages.Language.City" required>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b>    <label class="control-label">@Fabrika_Cars.Languages.Language.Name</label> </b>
+                                <div class="form-group">
+
+                                    <input type="text" name="name" class="form-control input-sm" placeholder="@Fabrika_Cars.Languages.Language.Name" required>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b>    <label class="control-label">@Fabrika_Cars.Languages.Language.phonenumber</label> </b>
+                                <div class="form-group">
+
+                                    <input type="text" name="phone" class="form-control input-sm" placeholder="@Fabrika_Cars.Languages.Language.phonenumber " required>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b>    <label class="control-label">@Fabrika_Cars.Languages.Language.Email  </label> </b>
+                                <div class="form-group">
+
+                                    <input type="email" name="email" class="form-control input-sm" placeholder="@Fabrika_Cars.Languages.Language.Email  " required>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+                                <b>    <label class="control-label">@Fabrika_Cars.Languages.Language.ContactmeWith  </label> </b>
+                                <div class="form-group">
+
+
+                                    <label>@Fabrika_Cars.Languages.Language.Mobile</label> <input type="checkbox" name="mobile" />
+                                    <label>@Fabrika_Cars.Languages.Language.Email</label> <input type="checkbox" name="mail" />
+
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-md-offset-3">
+
+                                <div class="form-group">
+
+                                    <input type="submit" value="@Fabrika_Cars.Languages.Language.publishadd " class="btn btn-info btn-block" style="font-weight:bold;font-size:18px;">
+                                    <br />
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    }
+
+                    
+              
+
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+<br />

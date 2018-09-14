@@ -1,0 +1,36 @@
+﻿@model Fabrika_Cars.Models.users
+
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+
+<form class="login">
+
+    
+
+</form>
+
+@using (Html.BeginForm("login","Home",FormMethod.Post,new { @class="login" , dir= @Fabrika_Cars.Languages.Language.dir }))
+{
+
+
+    <legend> @Fabrika_Cars.Languages.Language.login </legend> <br>
+
+    <input class="form-control" type="text" name="email" placeholder="@Fabrika_Cars.Languages.Language.Emailorphone" />  <br>
+    <input class="form-control" type="password" name="password" placeholder="@Fabrika_Cars.Languages.Language.Password" />  <br><br>
+
+            @ViewBag.errormessage
+
+
+             <input class="btn btn-primary btn-block" type="submit" value="@Fabrika_Cars.Languages.Language.login" />
+
+     <br>  <br>
+    <a href="forgot%20password.html">@Fabrika_Cars.Languages.Language.ForgotPassword ? </a>  <br> <br>
+    <a href="/Home/register">@Fabrika_Cars.Languages.Language.Register </a> <br> <br>
+    
+   
+
+
+}

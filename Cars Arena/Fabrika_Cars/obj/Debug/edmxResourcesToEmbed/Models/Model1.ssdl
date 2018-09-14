@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="carsArenaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="adv_copmanies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="car_category" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="connectwithmobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="connectwithmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="buyer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="gernder" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="item type" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="messages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="200" />
+    <Property Name="msg" Type="nvarchar(max)" />
+    <Property Name="sender_id" Type="int" />
+    <Property Name="receiver_id" Type="int" />
+  </EntityType>
+  <EntityType Name="sellers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="phonenumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="gernder" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="post time" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="date of birth " Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="item type" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sellers_adv_copmanies">
+    <Key>
+      <PropertyRef Name="sseid" />
+      <PropertyRef Name="cid" />
+    </Key>
+    <Property Name="sseid" Type="int" Nullable="false" />
+    <Property Name="cid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sellers_byuer">
+    <Key>
+      <PropertyRef Name="seid" />
+      <PropertyRef Name="bid" />
+    </Key>
+    <Property Name="seid" Type="int" Nullable="false" />
+    <Property Name="bid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="gender" Type="bit" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_adv_copmanies_users">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="adv_copmanies" Type="Self.adv_copmanies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="adv_copmanies">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_buyer_bid">
+    <End Role="buyer" Type="Self.buyer" Multiplicity="1" />
+    <End Role="sellers_byuer" Type="Self.sellers_byuer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="buyer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sellers_byuer">
+        <PropertyRef Name="bid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messages_users">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="messages" Type="Self.messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="messages">
+        <PropertyRef Name="sender_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messages_users1">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="messages" Type="Self.messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="messages">
+        <PropertyRef Name="receiver_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sellers_seid">
+    <End Role="sellers" Type="Self.sellers" Multiplicity="1" />
+    <End Role="sellers_byuer" Type="Self.sellers_byuer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sellers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sellers_byuer">
+        <PropertyRef Name="seid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_selllers_seid">
+    <End Role="sellers" Type="Self.sellers" Multiplicity="1" />
+    <End Role="sellers_adv_copmanies" Type="Self.sellers_adv_copmanies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sellers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sellers_adv_copmanies">
+        <PropertyRef Name="sseid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="carsArenaModelStoreContainer">
+    <EntitySet Name="adv_copmanies" EntityType="Self.adv_copmanies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bank" EntityType="Self.bank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="buyer" EntityType="Self.buyer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="messages" EntityType="Self.messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sellers" EntityType="Self.sellers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sellers_adv_copmanies" EntityType="Self.sellers_adv_copmanies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sellers_byuer" EntityType="Self.sellers_byuer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_adv_copmanies_users" Association="Self.FK_adv_copmanies_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="adv_copmanies" EntitySet="adv_copmanies" />
+    </AssociationSet>
+    <AssociationSet Name="fk_buyer_bid" Association="Self.fk_buyer_bid">
+      <End Role="buyer" EntitySet="buyer" />
+      <End Role="sellers_byuer" EntitySet="sellers_byuer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messages_users" Association="Self.FK_messages_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="messages" EntitySet="messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messages_users1" Association="Self.FK_messages_users1">
+      <End Role="users" EntitySet="users" />
+      <End Role="messages" EntitySet="messages" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sellers_seid" Association="Self.fk_sellers_seid">
+      <End Role="sellers" EntitySet="sellers" />
+      <End Role="sellers_byuer" EntitySet="sellers_byuer" />
+    </AssociationSet>
+    <AssociationSet Name="fk_selllers_seid" Association="Self.fk_selllers_seid">
+      <End Role="sellers" EntitySet="sellers" />
+      <End Role="sellers_adv_copmanies" EntitySet="sellers_adv_copmanies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,341 @@
+﻿@model IEnumerable<Fabrika_Cars.Models.adv_copmanies>
+
+@{
+    ViewBag.Title = "profile";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+
+
+
+
+<head>
+    
+
+    <style>
+        
+
+        .custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+
+
+
+        .section {
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: #111111;
+            color: #ccc;
+            border-top: solid 3px #1E97E3;
+            height: 50px;
+        }
+
+
+        .menuitem {
+            margin-top: 12px;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .menulink {
+            height: 40px;
+            padding: 7px;
+            border-bottom: 3px solid transparent;
+        }
+
+            .menulink:hover {
+                border-bottom: 3px solid #1E97E3;
+                text-decoration: none;
+                color: #1E97E3;
+            }
+
+        .footer {
+            margin-top: 12px;
+        }
+
+        .liitem {
+            height: 45px;
+        }
+
+        .skillLine {
+            display: inline-block;
+            width: 100%;
+            min-height: 90px;
+            padding: 3px 4px;
+        }
+
+        skillLineDefault {
+            padding: 3px 4px;
+        }
+
+        div.skill {
+            background: #F58723;
+            border-radius: 3px;
+            color: white;
+            font-weight: bold;
+            padding: 3px 4px;
+            width: 70px;
+        }
+
+        .rating {
+            margin-left: 30px;
+        }
+
+        .footerQR {
+            margin-left: 30%;
+        }
+
+        .leftText {
+            font-size: 41px;
+        }
+
+        .rightText {
+            font-size: 41px;
+            background: #F58723;
+            border-radius: 3px;
+            color: white;
+            padding: 3px 4px;
+        }
+
+
+    </style>
+
+</head>
+
+<div class="container">
+    <div class="container">
+        <br />
+        <div class="row">
+            <div class="col-sm-6 col-lg-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="text-center">@Fabrika_Cars.Languages.Language.usercontrolpanel<span class="glyphicon glyphicon-user pull-right"></span></h4>
+                    </div>
+                    <div class="panel-body text-center">
+                        <p class="lead">
+                            <strong>@Session["user_name"]</strong>
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item liitem">
+                            <strong class="pull-right">: @Fabrika_Cars.Languages.Language.username </strong>
+                            <span >@Session["user_name"]</span>
+                        </li>
+                        <li class="list-group-item liitem">
+                            <strong class="pull-right">:@Fabrika_Cars.Languages.Language.Email</strong>
+                            <span >@Session["user_email"]</span>
+                        </li>
+                        <li class="list-group-item liitem">
+                            <strong class="pull-right">: @Fabrika_Cars.Languages.Language.Mobile</strong>
+                            <span >@Session["user_phone"]</span>
+                        </li>
+                       
+
+                    </ul>
+                   
+
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-9" style="font-size:17px;font-weight:bold">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="text-center">@Fabrika_Cars.Languages.Language.youradvertisment<span class="glyphicon glyphicon-saved pull-right"></span></h4>
+                    </div>
+                    <div class="panel-body text-center">
+                        <p class="lead">
+                            <strong> @Fabrika_Cars.Languages.Language.controlyouradd </strong>
+                        </p>
+                    </div>
+                   
+                    <div class="row col-lg-12 col-md-12 col-xs-12 custyle">
+                        <table class="table table-striped custab" dir="rtl">
+                            <a href="/Home/freeAD" class="btn btn-primary btn-xs pull-right"><b>+</b> <strong>@Fabrika_Cars.Languages.Language.addnewadd  </strong></a>
+                             <thead>
+                               
+                                <tr class="active" dir="@Fabrika_Cars.Languages.Language.dir">
+                                    <td  class="text-center" >@Fabrika_Cars.Languages.Language.addnumber </td>
+                                    <td  class="text-center">@Fabrika_Cars.Languages.Language.title</td>
+                                    <td  class="text-center">@Fabrika_Cars.Languages.Language.price</td>
+                                    <td  class="text-center">@Fabrika_Cars.Languages.Language.deleteadd </td>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+
+                                @if (Model.Count() == 0)
+                                {
+                                    <center> <div> @Fabrika_Cars.Languages.Language.noadd </div> </center>
+                                }
+                                else
+                                {
+
+                                foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td class="text-center">@item.id</td>
+                                        <td class="text-center">@item.title</td>
+                                        <td class="text-center">@item.price</td>
+
+                                        <td class="text-center">
+
+                                            <a class='btn btn-info btn-xs' href="/Home/delete_adv/@item.id"><span class="glyphicon glyphicon-edit"></span> @Fabrika_Cars.Languages.Language.deleteadd</a>
+
+                                        </td>
+                                    </tr>
+
+                                }
+
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+
+
+
+
+
+
+                    <div class="panel-footer">
+                        <div class="row">
+                         
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/shieldui-all.min.css" />
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+<script type="text/javascript">
+        initializeRatings();
+        initializeQR1();
+        initializeQR2();
+        initializeChart1();
+
+        function initializeChart1() {
+            var data1 = getRandomArray(20, 1, 50);
+            var data2 = getRandomArray(20, 20, 70);
+
+            $("#chart1").shieldChart({
+                theme: "light",
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                primaryHeader: {
+                    text: "Performance Data"
+                },
+                tooltipSettings: {
+                    axisMarkers: {
+                        enabled: true,
+                        mode: 'x',
+                        width: 2,
+                        zIndex: 3,
+                        drawColor: "white"
+                    }
+                },
+                dataSeries: [
+                    {
+                        seriesType: 'bar',
+                        collectionAlias: 'Achieved',
+                        data: data1
+                    },
+                    {
+                        seriesType: 'line',
+                        collectionAlias: 'Target',
+                        data: data2
+                    }
+                ]
+            });
+        }
+
+        function initializeQR1() {
+            $("#qr1").shieldQRcode({
+                mode: "byte",
+                size: 150,
+                value: "Mike Smith",
+                style: {
+                    color: "#1E97E3"
+                }
+            });
+        }
+
+        function initializeQR1() {
+            $("#qr1").shieldQRcode({
+                mode: "byte",
+                size: 150,
+                value: "Mike Smith",
+                style: {
+                    color: "#1E97E3"
+                }
+            });
+        }
+
+        function initializeQR2() {
+            $("#qr2").shieldQRcode({
+                mode: "byte",
+                size: 150,
+                value: "Avarage: 6.3",
+                style: {
+                    color: "#1E97E3"
+                }
+            });
+        }
+
+        function initializeRatings() {
+
+            $('#rate1').shieldRating({
+                max: 7,
+                step: 0.1,
+                value: 6.3,
+                markPreset: false
+            });
+            $('#rate2').shieldRating({
+                max: 7,
+                step: 0.1,
+                value: 6,
+                markPreset: false
+            });
+            $('#rate3').shieldRating({
+                max: 7,
+                step: 0.1,
+                value: 4.5,
+                markPreset: false
+            });
+            $('#rate4').shieldRating({
+                max: 7,
+                step: 0.1,
+                value: 5,
+                markPreset: false
+            });
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandomArray(length, min, max) {
+            var array = [];
+            for (var boudary = 0; boudary < length; boudary++) {
+                array.push(getRandomInt(min, max));
+            }
+
+            return array;
+        }
+</script>

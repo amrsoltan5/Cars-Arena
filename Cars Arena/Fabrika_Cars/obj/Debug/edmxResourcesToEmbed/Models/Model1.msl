@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="carsArenaModelStoreContainer" CdmEntityContainer="carsArena">
+    <EntitySetMapping Name="adv_copmanies">
+      <EntityTypeMapping TypeName="carsArenaModel.adv_copmanies">
+        <MappingFragment StoreEntitySet="adv_copmanies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="car_category" ColumnName="car_category" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="connectwithmobile" ColumnName="connectwithmobile" />
+          <ScalarProperty Name="connectwithmail" ColumnName="connectwithmail" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bank">
+      <EntityTypeMapping TypeName="carsArenaModel.bank">
+        <MappingFragment StoreEntitySet="bank">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="buyer">
+      <EntityTypeMapping TypeName="carsArenaModel.buyer">
+        <MappingFragment StoreEntitySet="buyer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="gernder" ColumnName="gernder" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="item_type" ColumnName="item type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="messages">
+      <EntityTypeMapping TypeName="carsArenaModel.messages">
+        <MappingFragment StoreEntitySet="messages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="msg" ColumnName="msg" />
+          <ScalarProperty Name="sender_id" ColumnName="sender_id" />
+          <ScalarProperty Name="receiver_id" ColumnName="receiver_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sellers">
+      <EntityTypeMapping TypeName="carsArenaModel.sellers">
+        <MappingFragment StoreEntitySet="sellers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="gernder" ColumnName="gernder" />
+          <ScalarProperty Name="post_time" ColumnName="post time" />
+          <ScalarProperty Name="date_of_birth_" ColumnName="date of birth " />
+          <ScalarProperty Name="item_type" ColumnName="item type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sellers_adv_copmanies">
+      <EntityTypeMapping TypeName="carsArenaModel.sellers_adv_copmanies">
+        <MappingFragment StoreEntitySet="sellers_adv_copmanies">
+          <ScalarProperty Name="sseid" ColumnName="sseid" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="carsArenaModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="sellers_byuer" TypeName="carsArenaModel.sellers_byuer" StoreEntitySet="sellers_byuer">
+      <EndProperty Name="buyer">
+        <ScalarProperty Name="id" ColumnName="bid" />
+      </EndProperty>
+      <EndProperty Name="sellers">
+        <ScalarProperty Name="id" ColumnName="seid" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
